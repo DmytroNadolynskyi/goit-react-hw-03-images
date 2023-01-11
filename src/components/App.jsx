@@ -13,7 +13,7 @@ export class App extends Component {
     isLoading: false,
     images: [],
     modalIsOpen: false,
-    modalImage: '',
+    largeImage: '',
     showButton: false,
   };
   async componentDidUpdate(_, prevState) {
@@ -46,7 +46,7 @@ export class App extends Component {
     this.setState(prevState => ({ page: prevState.page + 1 }));
   };
   setModalImage = str => {
-    this.setState({ modalImage: str });
+    this.setState({ largeImage: str });
   };
   setModalIsOpen = bool => {
     this.setState({ modalIsOpen: bool });
@@ -80,7 +80,7 @@ export class App extends Component {
         {this.state.showButton && <Button onButtonClick={this.onButtonClick} />}
         {this.state.modalIsOpen && (
           <Modal
-            largeImage={this.state.modalImage}
+            largeImage={this.state.largeImage}
             onModalOpen={this.setModalIsOpen}
           />
         )}
